@@ -1,0 +1,42 @@
+// A quick tour of every feature the interpreter currently supports.
+
+print "Hello, toylang!";
+
+var x = 5;
+var y = 3;
+print x + y;        // 8
+print x * y - 1;     // 14
+
+// if / else
+if (x > y) {
+    print "x is bigger";
+} else {
+    print "y is bigger or equal";
+}
+
+// while loop
+var i = 0;
+while (i < 5) {
+    print i;
+    i = i + 1;
+}
+
+// for loop (desugars into a while loop under the hood)
+for (var j = 0; j < 5; j = j + 1) {
+    print j;
+}
+
+// functions with return values
+fun add(a, b) {
+    return a + b;
+}
+print add(10, 32);   // 42
+
+// recursion
+fun factorial(n) {
+    if (n <= 1) {
+        return 1;
+    }
+    return n * factorial(n - 1);
+}
+print factorial(6);  // 720
